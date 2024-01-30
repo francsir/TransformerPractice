@@ -5,6 +5,9 @@ import torch
 from tqdm.auto import tqdm
 import evaluate
 
+NumCudaDevices = torch.cuda.device_count()
+print("Number of CUDA devices: ", NumCudaDevices)
+
 raw_dataset = load_dataset("glue", "mrpc")
 checkpoint = "bert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
