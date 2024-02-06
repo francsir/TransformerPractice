@@ -24,16 +24,16 @@ texts = sonnets_dataset["text"]
 
 sonnets_dataset = Dataset.from_dict({"text": texts})
 
-sonnets_dataset = sonnets_dataset.train_test_split(test_size=0.3, seed = 42)
+sonnets_dataset = sonnets_dataset.train_test_split(test_size=0.1, seed = 42)
 
-test_texts = sonnets_dataset["test"]["text"]
-val_texts, test_texts = train_test_split(test_texts, test_size=0.7, random_state=42)
+##test_texts = sonnets_dataset["test"]["text"]
+##val_texts, test_texts = train_test_split(test_texts, test_size=0.7, random_state=42)
 
-val_dataset= Dataset.from_dict({"text": val_texts})
-test_dataset= Dataset.from_dict({"text": test_texts})
-
-sonnets_dataset['test'] = test_dataset
-sonnets_dataset['validation'] = val_dataset
+##val_dataset= Dataset.from_dict({"text": val_texts})
+##test_dataset= Dataset.from_dict({"text": test_texts})
+##
+##sonnets_dataset['test'] = test_dataset
+##sonnets_dataset['validation'] = val_dataset
 
 print(sonnets_dataset)
 sonnets_dataset.save_to_disk('./ShakespeareDeRedaction/sonnets_dataset')
