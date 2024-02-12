@@ -9,7 +9,7 @@ def clean(text):
 def lowercase(text):
     return text.lower()
 
-with open('./ShakespeareDeRedaction/Sonnets.txt', 'r') as file:
+with open('./ShakespeareDeRedaction/complete_works.txt', 'r') as file:
     data = file.read()
 
 numerals_removed = clean(data)
@@ -36,7 +36,7 @@ sonnets_dataset = sonnets_dataset.train_test_split(test_size=0.1, seed = 42)
 ##sonnets_dataset['validation'] = val_dataset
 
 print(sonnets_dataset)
-sonnets_dataset.save_to_disk('./ShakespeareDeRedaction/sonnets_dataset')
+sonnets_dataset.save_to_disk('./ShakespeareDeRedaction/complete_works_dataset')
 
 
 
